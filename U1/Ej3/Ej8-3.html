@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8 práctica</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var precio = prompt("Que precio tiene esta pieza?");
+      if (isNaN(precio)||precio<1) {
+        alert("El numero introducido no es correcto."
+                + "\nPresione F5 o refresque la página:"
+                + "\nEl valor introducido ha de ser un número positivo mayor que 0");
+      }else {
+        var rebaja = prompt("Dígame la rebaja que se le aplica al producto");
+        function precioFinal(precio,rebaja) {
+          return precio*(rebaja/100);
+          //return preciototal= precio-(precio*(rebaja/100)); Esto se lo pregunto.
+          /*document write("Tu producto costaba: " + precio);
+          document.write("Y se le aplicaba esta rebaja: " + rebaja);
+          document.write("Y su precio final tras la rebaja es = " + preciofinal);*/
+      }
+    }
+      var resultado = precioFinal(precio,rebaja);
+      alert(precio-resultado);
+    </script>
+  </body>
+</html>
