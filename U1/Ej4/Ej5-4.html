@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 5 práctica 4</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var Operacion = function(operacion){
+      var operacion = prompt("Introduce la operación que desea realizar");
+      var resultado = eval(operacion);
+      if (isFinite(resultado)==true && isNaN(resultado)!==true) {
+        alert("El resultado es finito y es un número");
+      }else {
+        alert("El resultado no es finito y no es un número");
+      }
+      alert(resultado);
+
+      // }
+      // if else(isNan(resultado)) {
+      //   alert("No es un número");
+      // }else {
+      //   alert("Es un número");
+      // }
+      // alert(resultado);
+    }
+    Operacion();
+    </script>
+  </body>
+</html>

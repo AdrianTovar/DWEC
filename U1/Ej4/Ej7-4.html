@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 7 práctica 4</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var diasSemana = ['Lunes', 'Martes', 'Miércoles','Jueves','Viernes','Sábado','Domingo'];
+      var i;
+      function dias(diasSemana) {
+        for (var i in diasSemana) {
+          document.write(diasSemana[i] + "<br>");
+        }
+      }
+      dias(diasSemana);
+      var pregunta = prompt("Que numero de dia de la semana es?");
+
+      function Pregunta(pregunta){
+        switch (pregunta) {
+          case 1:
+            alert("Lunes")
+            break;
+          case 2:
+            alert("Martes")
+            break;
+          case 3:
+            alert("Miércoles")
+            break;
+          case 4:
+            alert("Jueves")
+            break;
+          case 5:
+            alert("Viernes")
+            break;
+          case 6:
+            alert("Sábado")
+            break;
+          case 7:
+            alert("Domingo")
+            break;
+          default:
+            alert("");
+            break;
+        }
+      }
+      Pregunta(pregunta);
+    </script>
+  </body>
+</html>

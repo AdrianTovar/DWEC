@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 4 práctica 4</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var Cadena = function (saludo1, saludo2) {
+        var saludo1 = prompt("Dígame una frase");
+        var saludo2 = prompt("Dígame otra frase");
+        if (typeof saludo1 !== "string" || typeof saludo2!== "string") {
+          alert("ERROR");
+        }
+        (saludo1>=saludo2)? alert(saludo1.length):alert(saludo2.length);
+        
+        /*if (saludo1.lenght<=saludo2.lenght) {
+          console.log(saludo1);
+        }else if (saludo2.lenght<saludo1.lenght) {
+          console.log(saludo2);
+        }else if (typeof saludo1 !== "string" || typeof saludo2 !== "string") {
+          alert("ERROR");
+        }*/
+      }
+      Cadena();
+    </script>
+  </body>
+</html>
