@@ -7,35 +7,20 @@
   <body>
 
     <script type="text/javascript">
-      // function concatena(a1, a2){
-      //   if (typeof(a1=='string') && typeof(a2=='string')) {
-      //       a3 = a1 + " " + a2
-      //       return a3;
-      //     }else {
-      //       alert("Has introducido una cadena de caracteres inválida");
-      //     }
-      // }
-      // function saludador(concatena){
-      //   var nombre = prompt("Introduce tu nombre:");
-      //   var dia = "Buenos dias";
-      //     saludador(dia,nombre);
-      // }
-      // saludador(concatena);
-    function concatena(a1, a2){
-      if (typeof(a1=='string') && typeof(a2=='string')) {
-        a3 = a1 + " " + a2
-        return a3;
-      }else {
-        alert("Has introducido una cadena de caracteres inválida");
+    var concatena = function(a1, a2){
+      if(typeof(a1)== "string" && typeof(a2 )== "string"){
+         var a3 = a1 + " " + a2;
+         return a3;
+       }else{
+         document.write("Los valores introducidos no son strings.");
       }
     }
-    function saludador(){
-      var nombre = prompt("Introduce tu nombre:");
-      var buenosDias= "Buenos dias"
-      var saludo = concatena(buenosDias,nombre);
-      alert(saludo)
+    function saludador(concatena,nombre){
+      var b = "Buenos dias";
+      document.write(concatena(b,nombre));
     }
-    saludador();
+    var name = "Adrian Tovar";
+    saludador(concatena,name);
     </script>
   </body>
 </html>

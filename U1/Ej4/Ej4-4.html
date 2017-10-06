@@ -6,23 +6,28 @@
   </head>
   <body>
     <script type="text/javascript">
-      var Cadena = function (saludo1, saludo2) {
-        var saludo1 = prompt("Dígame una frase");
-        var saludo2 = prompt("Dígame otra frase");
-        if (typeof saludo1 !== "string" || typeof saludo2!== "string") {
+      function comparar(saludo1, saludo2) {
+        if (typeof (saludo1) !== "string" || typeof (saludo2)!== "string") {
           alert("ERROR");
+        }else {
+          (saludo1.length>=saludo2.length)? console.log(saludo1.length):console.log(saludo2.length);
         }
-        (saludo1>=saludo2)? alert(saludo1.length):alert(saludo2.length);
-        
-        /*if (saludo1.lenght<=saludo2.lenght) {
+
+
+        /*if (saludo1.length<=saludo2.lenght) {
           console.log(saludo1);
         }else if (saludo2.lenght<saludo1.lenght) {
           console.log(saludo2);
-        }else if (typeof saludo1 !== "string" || typeof saludo2 !== "string") {
+        }else if (typeof (saludo1) !== "string" || typeof (saludo2) !== "string") {
           alert("ERROR");
         }*/
       }
-      Cadena();
+      var saludo1 = "Hola";
+      var saludo2 = "Pepito";
+      var salida;
+      salida=comparar(saludo1,saludo2);
+      console.log(salida);
+
     </script>
   </body>
 </html>
