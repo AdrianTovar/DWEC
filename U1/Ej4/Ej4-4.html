@@ -8,9 +8,9 @@
     <script type="text/javascript">
       function comparar(saludo1, saludo2) {
         if (typeof (saludo1) !== "string" || typeof (saludo2)!== "string") {
-          alert("ERROR");
+          return alert("ERROR");
         }else {
-          (saludo1.length>=saludo2.length)? console.log(saludo1.length):console.log(saludo2.length);
+          (saludo1.length>=saludo2.length)?console.log(saludo1.length):console.log(saludo2.length);
         }
 
 
@@ -22,8 +22,10 @@
           alert("ERROR");
         }*/
       }
-      var saludo1 = "Hola";
-      var saludo2 = "Pepito";
+      var saludo1 = prompt("Introduzca una frase");
+      var saludo2 = prompt("Introduzca una frase");
+      // var saludo1 = "Hola";
+      // var saludo2 = "Pepito";
       var salida;
       salida=comparar(saludo1,saludo2);
       console.log(salida);
