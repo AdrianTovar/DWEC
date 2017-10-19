@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej5 práctica 1 U2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Persona(nombre, apellido1, apellido2){
+        this.nombre = nombre || "Anonymus";
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.saludar=function(){
+          console.log("Hola me llamo " + this.nombre+ " " + this.apellido1 + " " + this.apellido2);
+          // return Persona;
+        }
+      }
+
+
+      var persona1 = new Persona("Antonio", "Perez", "Molinos");
+      persona1.tel=640525412;
+      var persona2 = new Persona("Pepe", "Gomez", "Castellanos");
+      persona1.saludar();
+      console.log("Es el objeto persona1 es hijo de Persona?");
+      console.log(persona1 instanceof Persona);
+      console.log("Es el objeto persona2 es hijo de Persona?");
+      console.log(persona2 instanceof Persona);
+      Persona.prototype.edad = Math.floor(Math.random()*100)+1;
+      //Match.random() saca un numero entre el 0 y el 1. Incluye el 0 pero nunca llega al 1
+      //por eso al hacer el Math.floor redondea siempre a la baja y nunca sera 1
+      //para eso escribimos Math.floor(Math.random()*100)+1; para que sea un numero entre el 1 y el 100
+
+      document.write("El objeto persona1 posee los siguientes atributos:</br>");
+      for (var i in persona1) {
+        document.write("El atributo " +i+ " tiene el valor : " + persona1[i]+"</br>");
+      }
+      document.write("<br>")
+      document.write("El objeto persona2 posee los siguientes atributos:</br>");
+      for (var i in persona2) {
+        document.write("El atributo " +i+ " tiene el valor : " + persona2[i]+"</br>");
+      }
+      Persona.prototype.CumplirAnyo = function(){
+        this.edad= this.edad+1;
+        return this.edad;
+      }
+      document.write("<hr>");
+      document.write("Muestra de los campos añadidos y la funcion cumplir año</br>");
+      persona1.CumplirAnyo();
+      document.write("La edad de la persona1 es " + persona1.edad);
+    </script>
+  </body>
+</html>

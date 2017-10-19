@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej6 práctica 1 U2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function Persona(nombre, apellido1, apellido2){
+      this.nombre = nombre || "Anonymus";
+      this.apellido1 = apellido1;
+      this.apellido2 = apellido2;
+    }
+    function Estudiante(nombre,apellido1,apellido2,estudios){
+      Persona.call(this,nombre,apellido1,apellido2);
+      this.estudios = estudios;
+
+    }
+
+    Estudiante.prototype.NotaMedia=function(){
+      var nota= prompt("Introduce la nota media del alumno");
+      var NotaMedia = parseFloat(nota);
+      this.NotaMedia= NotaMedia.toFixed(2);
+      return this.NotaMedia;
+    }
+
+    Estudiante.prototype.recuperar= function(){
+      if (this.NotaMedia<5) {
+        this.NotaMedia=5;
+      }
+      return this.NotaMedia;
+    }
+
+    // var estudiante1 = new Estudiante("Adrian", "Tovar", "Rosello", "DAW");
+    // estudiante1.NotaMedia();
+    var lista = new Array(3);
+    lista[0] = new Estudiante("Adrian", "Tovar", "Rosello", "DAW");
+    lista[1] = new Estudiante("Juan", "Taberner", "Gomis", "DAW");
+    lista[2] = new Estudiante("Ruben", "Tomas", "Araque", "DAW");
+    for (var i = 0; i < lista.length; i++) {
+      document.write("El alumno de " +lista[i].estudios +" "+ lista[i].nombre +" "+ lista[i].apellido1 +" "+ lista[i].apellido2 + "tiene una nota media de "+ lista[i].NotaMedia() + "<br>");
+    }
+
+
+    </script>
+  </body>
+</html>

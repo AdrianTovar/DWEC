@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej 2 práctica 1 U2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      var coche1 = new Object();
+      coche1.Marca = "Lamborghini";
+      coche1.Ruedas = 4;
+      coche1.Plazas = "5";
+      coche1.Color = "Plata";
+      coche1.cambiaColor= function(){
+        coche1.color="Blanco"
+      }
+
+      var coche2 = new Object();
+      coche2.Marca = "Fiat";
+      coche2.Ruedas = 4;
+      coche2.Plazas = "5";
+      coche2.Color = "Gris";
+      coche2.cambiaColor= function(){
+        coche2.color="Blanco"
+      }
+
+      console.log("Ahora muestro las propiedades de los coches");
+      console.log(Object.keys(coche1));
+      console.log("Ahora borrare el atributo plazas y posteriormente lo mostrare por consola");
+      delete coche1.Plazas;
+      console.log(Object.keys(coche1));
+
+    </script>
+  </body>
+</html>

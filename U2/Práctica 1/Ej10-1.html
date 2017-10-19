@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej10 práctica 1 U2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function Persona(nombre, apellido1, apellido2){
+      this.nombre = nombre || "Anonymus";
+      this.apellido1 = apellido1;
+      this.apellido2 = apellido2;
+    }
+    function Estudiante(nombre,apellido1,apellido2,estudios){
+      Persona.call(this,nombre,apellido1,apellido2);
+      this.estudios = estudios;
+
+    }
+
+    Estudiante.prototype.NotaMedia=function(){
+      var nota= prompt("Introduce la nota media del alumno");
+      var NotaMedia = parseFloat(nota);
+      this.NotaMedia= NotaMedia.toFixed(2);
+      return this.NotaMedia;
+    }
+
+    Estudiante.prototype.recuperar= function(){
+      if (this.NotaMedia<5) {
+        this.NotaMedia=5;
+      }
+      return this.NotaMedia;
+    }
+
+    Estudiante.prototype.password=function(){
+      var con1 = this.nombre.charAt(0);
+      var con2 = this.apellido1.replace("e",3).replace("a",4);
+      var con3 = this.nombre.length;
+      var res1 = con1.concat(con2);
+      var res2 = res1.concat(con3);
+      return res2;
+    }
+    var adrian = new Estudiante("Adrian", "Tovar", "Rosello");
+    document.write(adrian.password());
+    </script>
+  </body>
+</html>
