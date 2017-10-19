@@ -33,7 +33,7 @@
 
     Estudiante.prototype.password=function(){
       var con1 = this.nombre.charAt(0);
-      var con2 = this.apellido1.replace("e",3).replace("a",4);
+      var con2 = this.apellido1.replace("e",3).replace("a",4).toLowerCase();
       var con3 = this.nombre.length;
       var res1 = con1.concat(con2);
       var res2 = res1.concat(con3);
