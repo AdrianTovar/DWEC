@@ -4,20 +4,10 @@
     <meta charset="utf-8">
     <title>Ej9 práctica 2 U2</title>
     <script type="text/javascript">
-    function checkTime(i){
-      if (i<10) {
-        i = "0" + i;
-      }
-      return i;
-    }
+
     function start(){
       var hoy = new Date();
-      var h = hoy.getHours();
-      var m = hoy.getMinutes();
-      var s = hoy.getSeconds();
-      m = checkTime(m);
-      s = checkTime(s);
-      console.log(h + ":" + m + ":" + s);
+      return console.log(hoy.toLocaleTimeString());
     }
     var t = setInterval(start,5000);
     </script>

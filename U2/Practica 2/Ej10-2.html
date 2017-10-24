@@ -12,12 +12,7 @@
     }
     function time(){
       var hoy = new Date();
-      var h = hoy.getHours();
-      var m = hoy.getMinutes();
-      var s = hoy.getSeconds();
-      m = checkTime(m);
-      s = checkTime(s);
-      console.log(h + ":" + m + ":" + s);
+      return console.log(hoy.toLocaleTimeString());
     }
    var t;
 
