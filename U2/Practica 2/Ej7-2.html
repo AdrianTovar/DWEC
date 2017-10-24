@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej7 práctica 2 U2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var a = [1,"Penumbra",2,false];
+    a = a.map(function(num){return Number(num);});
+    console.log(a);
+
+    var c =  [4, 21, 33, 12, 9, 54];
+    c = c.filter(function(num){return isNaN(num)==false;});
+    console.log(a);
+    a = c.forEach(function(num,indice){
+                    return console.log("En la posicion " + indice + " esta el valor " + num + " que multiplicado por 2 es = " + num*2);
+    });
+
+    c = c.forEach(function(num,indice, array){
+                    return console.log("En la posicion " + indice + " esta el valor [" + num + "] del array c");
+    });
+
+    </script>
+  </body>
+</html>

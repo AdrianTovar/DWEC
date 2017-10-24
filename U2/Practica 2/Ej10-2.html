@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej10 práctica 2 U2</title>
+    <script type="text/javascript">
+    function checkTime(i){
+      if (i<10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+    function time(){
+      var hoy = new Date();
+      var h = hoy.getHours();
+      var m = hoy.getMinutes();
+      var s = hoy.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      console.log(h + ":" + m + ":" + s);
+    }
+   var t;
+
+    </script>
+    <style media="screen">
+      *{
+        margin: auto;
+        float:left;
+      }
+      div ul{
+        padding-left:10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form  action="index.html" method="post">
+      <div >
+        <input type="button" name="start" value="Start Timer" onclick="t=setInterval(time,5000)" >
+      </div>
+      <div>
+        <input type="button" name="end" value="End Timer" onclick="clearInterval(t)">
+      </div>
+    </form>
+
+  </body>
+</html>

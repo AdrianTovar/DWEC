@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Opcional comida</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Producto(codigo,nombre,precio,ingredientes){
+        this.codigo = codigo;
+        this.nombre = nombre;
+        var p = Math.random()*3+1;
+        this.precio = p.toFixed(2);
+        var i = new Array();
+        this.ingredientes = i.sort();
+        this.imprimeDatos=function(){
+        var datos = "Codigo: " + this.codigo + "<br>Nombre: " + this.nombre + "<br>Precio: " + this.precio;
+          document.write(datos);
+          return datos;
+        }
+      }
+      var garamMasala = new Producto(3,"Garam Masala",["Canela","Clavo","Nuez Moscada","Pimienta negra","Cardamomo"]);
+      garamMasala.imprimeDatos();
+    </script>
+  </body>
+</html>

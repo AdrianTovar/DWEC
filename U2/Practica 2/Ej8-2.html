@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej8 práctica 2 U2</title>
+    <script type="text/javascript">
+      function cuentaAtras() {
+        return alert("Ya han pasado 5 segundos");
+      }
+    </script>
+    <style media="screen">
+    *{
+      margin:auto;
+      padding-left: 10px;
+    }
+    img{
+      height:100px;
+    }
+    </style>
+  </head>
+  <body>
+    <img src="reloj.png" alt="reloj">
+    <form action="index.html" method="post">
+      <div class="">
+        <input type="button" name="Temporizador" value="Temporizador" onclick="setTimeout(cuentaAtras,5000)">
+      </div>
+    </form>
+  </body>
+</html>

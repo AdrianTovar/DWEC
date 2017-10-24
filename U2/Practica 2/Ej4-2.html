@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej 4 práctica 2 U2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var a = [1,2,3,4];
+    a.push(5,6);
+    a.unshift(-1,0);
+    console.log(a);
+    console.log(a.toString());
+    console.log("Quitamos los valores del array de la posicion 3-5 pero sin crear un nuevo array con esos valores --> "+a.splice(3-6));
+    console.log("Aqui mismo se ve el array sin los valores anteriormente quitados "+ a);
+    a.splice(4,0,10);
+    a.splice(5,0,25);
+    console.log("Añadimos el 10 y el 25 en el penultimo lugar del array " + a);
+    console.log(a.join("==>"));
+    var b;
+    b = a;
+    b.sort(function(n1,n2){return n2-n1;});
+    console.log(b);
+    console.log(a);
+    console.log("El sort se aplica tanto como al array a como al array b porque al hacer la copia del array se copia la misma direccion de memoria a la que esta apuntando.");
+    console.log(a.indexOf(25));
+    console.log(a.indexOf(234));
+    console.log(a.every(function(num){return isNaN(num)!== true;}));
+    console.log(a.some(function(num){return num<20;}));
+    var c = [4,21,33,12,9,54];
+    function sumarArray(total,num){
+      return total+num;
+    }
+
+    console.log(c.reduce(sumarArray));
+    </script>
+  </body>
+</html>
