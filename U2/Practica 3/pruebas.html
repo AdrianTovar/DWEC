@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pruebas</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Prueba(idioma){
+        this.idioma= navigator.language;
+      }
+      var persona = new Prueba();
+      var v = window.open("", "Ventana", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+      // v.document.write("<html><head></head><body><p>Al aceptar da su permiso para la extraccion y posterior venta de sus organos aún a riesgo de su integridad fisica</p><form><input type='submit' name='Aceptar' value='Aceptar'><br><input type='submit' name='Cancelar' value='Cancelar'></form></body></html>");
+      function showConfirm() {
+          var response = confirm("Do you accept the shopping conditions?");
+          if(response) {
+              console.log("Get a better job");
+          } else {
+              console.log("Are you sure? OK...");
+          }
+      }
+
+    </script>
+  </body>
+</html>
