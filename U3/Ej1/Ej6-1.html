@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Crea elementos del DOM</title>
+<script type="text/javascript">
+onload = function creaDOM(){
+/*Aquí se escribe lo que sea necesario*/
+var h1 = document.createElement("h1");
+document.body.appendChild(h1);
+var cont = document.createTextNode("Este es el titulo");
+h1.appendChild(cont);
+h1.style.color = "blue";
+h1.style.fontFamily = "Arial";
+var foto = document.createElement("img");
+document.body.appendChild(foto);
+foto.setAttribute("src", "http://fotografias.lasexta.com/clipping/cmsimages02/2017/03/12/C3399A9C-686C-42BC-97B2-56A682DEFA4C/58.jpg");
+foto.style.height = "50px";
+foto.style.width = "50px";
+}
+</script>
+</head>
+<body>
+</body>
+</html>
