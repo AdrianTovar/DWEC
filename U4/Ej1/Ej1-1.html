@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p onclick="document.body.children[2].innerHTML='Esto puede o no ser un parrafo , hasta que no se clica son las dos a la vez'">Esto es un p</p>
+    <div>Esto es un div</div>
+    <h1>Esto es un h1</h1>
+    <h2>Esto es un h2</h2>
+    <h3 onmouseup="mouseup();">Esto es un h3</h3>
+    <script type="text/javascript">
+       var midiv=document.getElementsByTagName('div')[0];
+       midiv.oncontextmenu=function(midiv){
+         midiv.preventDefault();
+         midiv.target.innerHTML="Esto es un div sin el menu contextual desplegado";
+       }
+       var mih2=document.getElementsByTagName('h2')[0];
+       mih2.addEventListener("mousedown",
+       function(){
+         mih2.innerHTML="It may be in english now";
+       });
+
+      var mih1=document.getElementsByTagName('h1')[0];
+      mih1.onmouseover = function(){
+        mih1.style.fontSize = "36px";
+        mih1.innerHTML="Esto es un h1 si esta de humor, si no , es un dolor de pelotas";
+      }
+      function mouseup(){
+        document.getElementsByTagName('h3')[0].innerHTML="Esto es otro h3 adulto e independiente que sabe apañarselas solo";
+      }
+    </script>
+  </body>
+</html>

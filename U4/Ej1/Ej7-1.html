@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo evento teclado</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+  onload = function() {
+    onkeydown = showIfSpecial;
+    onkeypress = showChar;
+    onkeyup = showSpecialChar;
+  }
+
+  var especial;
+
+  function showIfSpecial(e){
+    especial = e.altKey || e.ctrlKey || e.shiftKey || e.metaKey;
+  }
+
+  function showChar(e) {
+    var mensaje = '';
+    mensaje = "Se ha pulsado la tecla con numero ASCII " + e.charCode + ", " +
+              " que es el caracter:  " + String.fromCharCode(e.charCode) + "<br>";
+    midiv.innerHTML += mensaje;
+  }
+
+  function showSpecialChar(e) {
+    if (especial){
+      var mensaje = '';
+      mensaje = "Has pulsado la tecla especial: " + e.keyCode + " " +
+                " que corresponde a : " + e.key + "<br><br>";
+      console.log(mensaje);
+    }
+  }
+
+</script>
+</head>
+<body>
+<h1>Pulse cualquier letra</h1>
+<div id="midiv"> </div>
+</body>
+</html>
