@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escoge tu regalo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style media="screen">
+      img{
+        width:300px;
+
+      }
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+      body {
+        margin-bottom: 30px; /* Margin bottom by footer height */
+      }
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30px; /* Set the fixed height of the footer here */
+        line-height: 30px; /* Vertically center the text there */
+      }
+      .cabecera{
+        margin-bottom: 50px;
+      }
+      /* Tooltip container */
+.tooltip {
+position: relative;
+display: inline-block;
+/*border-bottom: 1px dotted black; /* If you want dots under the hoverable text */*/
+}
+
+/* Tooltip text */
+.tooltipo .tooltiptext {
+visibility: hidden;
+width: 120px;
+background-color: #555;
+color: #fff;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+
+/* Position the tooltip text */
+position: absolute;
+z-index: 1;
+bottom: 100%;
+left: 50%;
+margin-left: -60px;
+
+/* Fade in tooltip */
+opacity: 0;
+transition: opacity 1s;
+}
+
+/* Tooltip arrow */
+.tooltipo .tooltiptext::after {
+content: "";
+position: absolute;
+top: 100%;
+left: 50%;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipo:hover .tooltiptext {
+visibility: visible;
+opacity: 1;
+}
+
+
+
+    </style>
+</head>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="cabecera w-100 text-center">
+            <h1>Escoge un regalo</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cuerpo">
+            <div class="row">
+            <figure class=" present1 tooltipo col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+              <img src="foto1.jpg" alt="Regalo1">
+              <span class="tooltiptext"id="regalo1">Pista: Adrian Smith</span>
+            </figure>
+            <figure class="present2 tooltipo col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+              <img src="foto1.jpg" alt="Regalo2">
+              <span class="tooltiptext"id="regalo2">Pista: Brum brum!!!</span>
+            </figure>
+            <figure class="present3 tooltipo col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+              <img src="foto1.jpg" alt="Regalo3">
+              <span class="tooltiptext"id="regalo3">El estado de tu vida sentimental</span>
+            </figure>
+          </div>
+          </div>
+        </div>
+        <div class="row">
+          <footer class="w-100 bg-light text-center">Este es el copyright&copy; 2017</footer>
+        </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+  var tip = document.getElementsByTagName('span');
+  for (var i = 0; i < tip.length; i++) {
+    tip[i].style.displat="none";
+  }
+    var presents = document.getElementsByTagName('img');
+    function showTip1(e){
+      e.preventDefault();
+      tip[0].style.display="block";
+    }
+    function showTip2(e){
+      e.preventDefault();
+      tip[1].style.display="block";
+    }
+    function showTip3(e){
+      e.preventDefault();
+      tip[2].style.display="block";
+    }
+    presents[0].addEventListener("contextmenu", showTip1);
+    presents[1].addEventListener("contextmenu", showTip2);
+    presents[0].addEventListener("contextmenu", showTip3);
+
+    function showPresent1(){
+      presents[0].src="guitarra.jpg"
+      onclick = function(){alert("You have won a guitar!!!!!!")};
+      presents[1].removeEventListener("click",showPresent2);
+      presents[2].removeEventListener("click", showPresent3);
+    }
+    function showPresent2(){
+      presents[1].src="bmw.png"
+      onclick = function(){alert("You have won a BMW 600!!!!!!")};
+      presents[0].removeEventListener("click",showPresent1);
+      presents[2].removeEventListener("click", showPresent3);
+    }
+    function showPresent3(){
+      presents[2].src="escombros.jpg"
+      onclick = function(){alert("You have won some debris!!!!!!")};
+      presents[0].removeEventListener("click",showPresent1);
+      presents[1].removeEventListener("click", showPresent2);
+    }
+    presents[0].addEventListener("click",showPresent1);
+    presents[1].addEventListener("click",showPresent2);
+    presents[2].addEventListener("click",showPresent3);
+
+  </script>
+</html>
