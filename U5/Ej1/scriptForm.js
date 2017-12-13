@@ -12,17 +12,25 @@ e.preventDefault();
  if (nom==null||nom.length==0 || !(/^\S+[\s?\S+]*$/.test(nom))) {
    missList += "El nombre introducido es erroneo, introduzca un valor valido <br>";
    ret = false;
+ }else {
+   document.cookie = "Nombre ="+nom +
+    ";max-age="+3600*24*365 + ";path =/;";
  }
- var lastName = document.getElementById('apellidos').vallue;
+ var lastName = document.getElementById('apellidos').value;
  if (lastName==null||lastName==0||!(/^\S+[\s?\S+]*$/.test(lastName))) {
     missList += "Los apellidos introducidos son erroneos";
     ret = false;
+ }else {
+   document.cookie = "Apellidos ="+lastName+
+      ";max-age="+3600*24*365 + ";path =/;";
  }
 
  var email = document.getElementById('email').value;
  if (!/^\w+@\w+\.\w+$/.test(email)) {
    missList +="Email erróneo";
    ret=false;
+ }else {
+   localStorage.setItem("email", email);
  }
 
  var compEmail = document.getElementById('emailRepe').value;
@@ -41,6 +49,7 @@ e.preventDefault();
   if (dni.charAt(8) != letras[(dni.substring(0, 8))%23]) {
     ret = false;
   }
+  sessionStorage.dni = dni;
 }
 
     var fecha = (document.getElementById("fecha").value).split("-");
@@ -81,7 +90,7 @@ e.preventDefault();
 
  if (ret){
 
-      formulario.action = fav+".html"
+      formulario.action = "alta.html";
       formulario.submit();
       document.getElementById("enviar").value = "Enviando...";
       document.getElementById("enviar").disabled = true;

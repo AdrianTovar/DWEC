@@ -19,7 +19,7 @@
       miImg.addEventListener("mouseout", function(){
         miImg.src = "foto1.jpg";
       });
-      miA.addEventListener("click", function(){
+      miA.addEventListener("click", function(e){
         miImg.removeEventListener("mouseover", cambiaImg);
         e.preventDefault();
       });
