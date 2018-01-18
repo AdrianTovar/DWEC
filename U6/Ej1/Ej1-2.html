@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      onload = function(){
+        if(window.XMLHttpRequest){
+        var xhr = new XMLHttpRequest();
+        }else if (ActiveXObject("Microsoft.XMLHTTP")) {
+        var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+            var ram = Math.ceil(Math.random()*4);
+            var url = "Noticias"+ram+".txt";
+            console.log(url);
+            xhr.open("GET",url,true);
+            xhr.onreadystatechange = function noticias(){
+              if(xhr.readyState==4 && xhr.status == 200){
+                not.innerHTML = xhr.responseText;
+              }else if(xhr.status !==200 && xhr.readyState == 4){
+                alert(xhr.status +" "+ xhr.statusText);
+              }
+              estados.innerHTML += xhr.statusText+"<br>";
+              cabecera.innerHTML += xhr.getAllResponseHeaders()+ "<br>";
+              respuesta.innerHTML += xhr.readyState+"<br>";
+
+            }
+            xhr.send();
+
+
+
+      }
+    </script>
+    <p id="not"></p>
+    <div id="estados">
+      <h2>Estados</h2>
+    </div>
+    <div id="cabecera">
+      <h2>Cabeceras</h2>
+    </div>
+    <div id="respuesta">
+      <h2>Codigo</h2>
+    </div>
+  </body>
+</html>

@@ -14,7 +14,7 @@ e.preventDefault();
    ret = false;
  }else {
    document.cookie = "Nombre ="+nom +
-    ";max-age="+3600*24*365 + ";path =/;";
+    ";max-age="+3600*24*360 + ";path =/;";
  }
  var lastName = document.getElementById('apellidos').value;
  if (lastName==null||lastName==0||!(/^\S+[\s?\S+]*$/.test(lastName))) {
@@ -22,7 +22,7 @@ e.preventDefault();
     ret = false;
  }else {
    document.cookie = "Apellidos ="+lastName+
-      ";max-age="+3600*24*365 + ";path =/;";
+      ";max-age="+3600*24*360 + ";path =/;";
  }
 
  var email = document.getElementById('email').value;

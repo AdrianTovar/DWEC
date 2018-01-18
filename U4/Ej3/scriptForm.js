@@ -2,6 +2,20 @@ onload=function(){
 
 var formulario = document.forms[0];
 
+function ponFoco(e){
+  e.target.style.outline = "purple solid 1px";
+}
+
+function quitaFoco(e){
+  e.target.style.outline = "none";
+}
+
+var inputs = document.querySelectorAll("input");
+for(var i = 0; i<inputs.lenght-1; i++){
+  inputs[i].addEventListener('focus',ponFoco);
+  inputs[i].addEventListener('blur'quitaFoco);
+}
+
 formulario.onsubmit = function(e){
 var miss = document.getElementsByClassName('errores')[0];
 var missList ="";
@@ -13,7 +27,7 @@ e.preventDefault();
    missList += "El nombre introducido es erroneo, introduzca un valor valido <br>";
    ret = false;
  }
- var lastName = document.getElementById('apellidos').vallue;
+ var lastName = document.getElementById('apellidos').value;
  if (lastName==null||lastName==0||!(/^\S+[\s?\S+]*$/.test(lastName))) {
     missList += "Los apellidos introducidos son erroneos";
     ret = false;
