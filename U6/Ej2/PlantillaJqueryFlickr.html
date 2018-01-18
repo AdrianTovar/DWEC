@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ej Flickr</title>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").click(function(){
+      $("#imagenes").empty();
+      $("<img/>").attr("src", "carga.gif").appendTo("#imagenes");
+      var valor = $("#selector").val();
+      var url = "https://api.flickr.com/services/feeds/photos_public.gne?tags=";
+      url += valor + "&format=json&jsoncallback=?";
+      $.getJSON(url,function(data,st,xhr){
+        var arrayFotos = data.items;
+        var max = 10;
+        if (st =="success") {
+          $("#imagenes").empty();
+          $.each(arrayFotos,function(i, item){
+                var source = item.media.m;
+                if(i<max){
+                  $("<img src=" + source +">").width(200).height(200).appendTo("#imagenes");
+                }
+          });
+        }
+      });
+    });
+	});
+</script>
+</head>
+<body>
+  <h1>Mi Flickr</h1>
+  <div id="imagenes"></div>
+  <button>Dibujar</button>
+  <select id="selector">
+    <option value="inodoros">Paisajes</option>
+    <option value="noodles">Cachorros</option>
+    <option value="monkey">Perretes</option>
+    <option value="sassy">Velociraptor</option>
+    <option value="trans">Cuteness Over 9000</option>
+    <option value="cheese">Medusas</option>
+    <option value="moss">Jackie Chan</option>
+  </select>
+
+</body>
+</html>
